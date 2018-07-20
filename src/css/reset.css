@@ -1,0 +1,71 @@
+/* 
+* @Author: Marte
+* @Date:   2017-07-25 10:48:25
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-08-12 10:10:43
+*/
+/*reset css*/
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: 'MicroSoft YaHei' ,'sans-serif';
+}
+ul,ol {
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+a:hover {
+    color: #333;
+}
+input[type="text"],input[type="number"],input[type="tel"],textarea,button {
+    border: none;
+    outline: none;
+    resize: none;
+    /*不允许用户拉升*/
+    /*清除浏览器自带样式*/
+    -webkit-appearance: none;
+}
+i,b,em {
+    font-weight: normal;
+    font-style: normal;
+}
+/*conmon样式*/
+.f_left {
+    float: left;
+}
+.f_right {
+    float: right;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+/* 隐藏元素 */
+.hidden{
+    display:none;
+}

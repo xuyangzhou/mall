@@ -1,0 +1,107 @@
+body {
+  background: #ccc;
+  font-size: 20px;
+}
+html,
+body,
+.box {
+  width: 100%;
+  height: 100%;
+}
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.login-box {
+  width: 30%;
+  min-width: 325px;
+  padding: 10px;
+  background: #fff;
+}
+.login-box .title {
+  text-align: center;
+}
+.login-box .input-box {
+  margin-bottom: 20px;
+}
+.login-box .input-box li {
+  height: 80px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.login-box .input-box li label {
+  text-align: center;
+  color: #00A1FF;
+  width: 40px;
+  line-height: 80px;
+  height: 100%;
+}
+.login-box .input-box li label i {
+  font-size: 24px;
+}
+.login-box .input-box li input {
+  height: 100%;
+}
+.login-box .action-box {
+  font-size: 16px;
+}
+.login-box .action-box #remember {
+  display: none;
+}
+.login-box .action-box #remember:checked ~ label .remember-case {
+  border-color: #00A1FF;
+  position: relative;
+}
+.login-box .action-box #remember:checked ~ label .remember-case.active::after {
+  content: "√";
+  color: #00A1FF;
+  font-size: 20px;
+  transform: rotate(10deg);
+  position: absolute;
+  left: 0;
+  top: -8px;
+}
+.login-box .action-box .remember-case {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border: 1px solid #ccc;
+}
+.login-box .action-box .btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #00A1FF;
+  color: #fff;
+}

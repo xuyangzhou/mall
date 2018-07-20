@@ -1,0 +1,112 @@
+body{
+    background: #ccc;
+    font-size: 20px;
+}
+html,body,.box{
+    width: 100%;
+    height: 100%;
+}
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.flex-v {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.flex-align-center {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flex-pack-center {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.flex-pack-justify {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+
+.login-box{
+    width: 30%;
+    min-width: 325px;
+    padding: 10px;
+    background: #fff;
+    .title{
+        text-align: center;
+    }
+    .input-box{
+        margin-bottom: 20px;
+        li{
+            height: 80px;
+            border-bottom: 1px solid #f0f0f0;
+            label{
+                i{font-size: 24px;}
+                text-align: center;
+                color: #00A1FF;
+                width: 40px;
+                line-height: 80px;
+                height: 100%;
+            }
+            input{
+                height: 100%;
+            }
+        }
+    }
+    .action-box{
+        font-size: 16px;
+        #remember{
+            display: none;
+            &:checked ~ label{
+                .remember-case{
+                    border-color: #00A1FF;
+                    position: relative;
+                    &.active::after{
+                        content:"√";
+                        color: #00A1FF;
+                        font-size: 20px;
+                        transform: rotate(10deg);
+                        position: absolute;
+                        left: 0;
+                        top: -8px;
+                    }
+                }
+            }
+        }
+        .remember-case{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            border: 1px solid #ccc;
+        }
+        .btn{
+            padding: 10px 20px;
+            border-radius: 6px;
+            background-color: #00A1FF;
+            color: #fff;
+        }
+    }
+}
