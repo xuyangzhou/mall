@@ -33,7 +33,7 @@ a {
 a:hover {
     color: #333;
 }
-input[type="text"],input[type="number"],input[type="tel"],textarea,button {
+input,input[type="text"],input[type="number"],input[type="tel"],textarea,button {
     border: none;
     outline: none;
     resize: none;
@@ -41,6 +41,16 @@ input[type="text"],input[type="number"],input[type="tel"],textarea,button {
     /*清除浏览器自带样式*/
     -webkit-appearance: none;
 }
+input[type=number] {  
+    -moz-appearance:textfield;
+}
+
+/* 谷歌下的移除 */
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none;
+}
+
 i,b,em {
     font-weight: normal;
     font-style: normal;

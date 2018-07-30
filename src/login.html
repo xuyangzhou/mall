@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./css/iconfont.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./less/login.css">
+    <script src="./js/baseUrl.js"></script>
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/layer.js"></script>
+    <script src="./lib/template-web.js"></script>
 </head>
 <body>
     <div class='box flex flex-align-center flex-pack-center'>
@@ -15,18 +19,18 @@
             <div class="title">标题</div>
             <ul class="input-box">
                 <li class="flex flex-align-center flex-pack-justify">
-                    <label><i class="iconfont icon-my"></i></label> <input type="text" class="flex-1" placeholder="手机号">
+                    <label><i class="iconfont icon-my"></i></label> <input type="text" id="username" class="flex-1" placeholder="账号">
                 </li>
                 <li class="flex flex-align-center flex-pack-justify">
-                    <label><i class="iconfont icon-lock"></i></label> <input type="text" class="flex-1" placeholder="验证码">
+                    <label><i class="iconfont icon-lock"></i></label> <input type="password" id="password" class="flex-1" placeholder="密码">
                 </li>
             </ul>
             <ul class="action-box flex flex-align-center flex-pack-justify">
                 <li>
-                    <input type="checkbox" name="remember" id="remember"> 
+                    <!-- <input type="checkbox" name="remember" id="remember"> 
                     <label class="flex flex-align-center" for="remember">
                         <span class="remember-case active"></span> 记住密码
-                    </label>
+                    </label> -->
                 </li>
                 <li>
                     <div class="btn">登录</div>
@@ -35,4 +39,5 @@
         </div>
     </div>
 </body>
+<script src="./js/login.js"></script>
 </html>

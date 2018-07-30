@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/baseUrl.js"></script>
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/template-web.js"></script>
+</head>
+<style>
+    .box{
+        width: 400px;
+        position: relative;
+        /* overflow: hidden; */
+    }
+    .car,.area-box{
+        display: flex;
+    }
+    .car li{
+        width: 33.33%;
+        line-height: 40px;
+        text-align: center;
+        background-color: #ccc;
+        border-right: 1px solid #ccc;
+    }
+    .car li.active{
+        background: #fff;
+        color: #f50;
+    }
+    .area-box{
+        align-items: flex-start;
+        position: absolute;
+        left: 0;
+        top: 40px;
+    }
+    .area-box li{
+        padding: 10px;
+    }
+    .area-box li.active{
+        background-color: #f50;
+        color: #fff;
+    }
+    .area{
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #put{
+        border: 1px solid #ccc;
+        width: 400px;
+        height: 40px;
+        margin: 20px 0;
+    }
+</style>
+<body>
+    <input type="text" placeholder="请选择" readonly disabled id="put">
+    <div class="box">
+        <ul class="car">
+            <li data-index="0" class="active">省份</li>
+            <li data-index="1">城市</li>
+            <li data-index="2">区县</li>
+        </ul>
+        <div class="area-box">
+            <ul class="area province"></ul>
+            <ul class="area city"></ul>
+            <ul class="area district"></ul>
+        </div>
+    </div>
+</body>
+<script id="list" type="text/html">
+    {{each list}}
+    <li data-index='{{$index}}'>{{$value.name}}</li>
+    {{/each}}
+</script>
+<script id="list2" type="text/html">
+    {{each list}}
+    <li data-index='{{$index}}'>{{$value}}</li>
+    {{/each}}
+</script>
+<script>
+    var json = null;
+    var p = '';
+    var c = '';
+    var d = '';
+    $(".car").on('click','li',function(){
+        let $this = $(this);
+        $this.siblings().removeClass('active');
+        $this.addClass('active');
+        let index = $this.data('index');
+        console.log(index)
+        $('.area-box').css('left', -(index * 400) + 'px');
+    })
+
+    var provinceIndex = 0;
+    $(".province").on('click','li',function(){
+        let $this = $(this);
+        $this.siblings().removeClass('active');
+        $this.addClass('active');
+        provinceIndex = $this.data('index');
+        console.log($this.text())
+        getAddress(function (data) {
+            $(".city").html(template('list', { list: data[provinceIndex].city }))
+            $('.area-box').css('left', '-400px');
+            $(".car li").removeClass('active');
+            $(".car li:eq(1)").addClass('active');
+            p = $this.text();
+            $("#put").val(p)
+        })
+    })
+
+    $(".city").on('click', 'li', function () {
+        let $this = $(this);
+        $this.siblings().removeClass('active');
+        $this.addClass('active');
+        let index = $this.data('index');
+        console.log('city', provinceIndex,index)
+        getAddress(function (data) {
+            console.log(data[provinceIndex].city[index].area)
+            $(".district").html(template('list2', { list: data[provinceIndex].city[index].area }))
+            $('.area-box').css('left', '-800px');
+            $(".car li").removeClass('active');
+            $(".car li:eq(2)").addClass('active');
+            c = $this.text();
+            $("#put").val(p + ' / ' + c)
+        })
+    })
+
+    $(".district").on('click', 'li', function () {
+        let $this = $(this);
+        $this.siblings().removeClass('active');
+        $this.addClass('active');
+        let index = $this.data('index');
+        d = $this.text();
+        $("#put").val(p+' / '+c+' / '+d)
+    })
+
+    function getAddress(callback){
+        $.ajax({
+            url:"./data/address.json",
+            dataType:"JSON",
+            success:function(data){
+                console.log(data)
+                callback(data)
+            }
+        })
+    }
+
+    getAddress(function(data){
+        json = data;
+        $(".province").html(template('list', { list: data }))
+        // $(".city").html(template('list', { list: data[0].city }))
+        // $(".district").html(template('list2', { list: data[0].city[0].area }))
+    })
+    
+
+</script>
+</html>

@@ -1,0 +1,175 @@
+html,
+body {
+  width: 100%;
+}
+.container {
+  margin: 0 auto;
+}
+.header {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  padding: 0 12px;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.header .logo {
+  width: 50px;
+  height: 50px;
+}
+.header .logo img {
+  width: 100%;
+}
+.header .nav {
+  height: 100%;
+}
+.header .nav li {
+  width: 120px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 18px;
+  transition: all 0.4s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+.header .nav li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #687074;
+  text-transform: uppercase;
+}
+.header .nav li:hover {
+  border-bottom: 2px solid #b81c2b;
+}
+.header .nav li:hover a {
+  color: #b81c2b;
+}
+.header .nav li.active {
+  border-bottom: 2px solid #b81c2b;
+}
+.header .nav li.active a {
+  color: #b81c2b;
+}
+.dask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.25);
+  display: none;
+}
+.contant {
+  padding-top: 80px;
+}
+.contant .banner {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(#ff9a26, #b81c2b);
+}
+.contant .container {
+  padding-bottom: 60px;
+  padding-left: 12px;
+  margin-top: 12px;
+}
+.footer {
+  width: 100%;
+  height: 60px;
+  font-size: 12px;
+  color: #a7a7a7;
+  text-align: center;
+  line-height: 60px;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #eee;
+  z-index: 99;
+}
+@media (max-width: 640px) {
+  .header {
+    height: 60px;
+  }
+  .header .btn-navbar {
+    padding: 10px 15px;
+    margin-top: 1px;
+    margin-right: 0;
+    background: #b81c2b;
+    margin-top: 12px;
+    border: none !important;
+  }
+  .header .btn-navbar:hover {
+    background: #676767;
+  }
+  .header .btn-navbar span,
+  .header .btn-navbar:hover span {
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  .header .btn-navbar .icon-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin-top: 3px;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  }
+  .header .nav {
+    background: #fff;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  .header .nav li {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #eee;
+  }
+  .footer {
+    height: 40px;
+    line-height: 40px;
+  }
+  .contant {
+    padding-top: 60px;
+  }
+  .contant .banner {
+    height: 220px;
+  }
+  .contant .container {
+    width: 375px;
+    padding-bottom: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}

@@ -1,50 +1,39 @@
 ;(function App(){
-    var btnNavbar =  $('btn-navbar');
-    var nav = $(".nav");
-    var dask = $(".dask");
-    var bodyWidth = $('body').width();
+    var baseUrl = getPort().baseUrl;
+    var imgUrl = getPort().imgUrl;
 
-    window.onresize = function(){
-        (bodyWidth >= 640) ? nav.show() : nav.hide();
-    };
+    // 商品列表
+    projectList();
+    function projectList(){
+        $.ajax({
+            type:"POST",
+            url: baseUrl + '/commodityInfoController/selectCommodityInfosByCondition',
+            data:{
+                commodityName:'',
+                commodityCode:'',
+                orderType:'' 
+            },
+            dataType:"JSON",
+            success(data){
+                console.log(data)
+                if(data.result.statusCode === 1){
+                    data.list.length & data.list.forEach(function(v,i){
+                        v.pic_path = imgUrl + v.pic_path;
+                    });
 
-    $(".btn-navbar").on("click",() => {
-        let $this = $(this);
-        nav.stop().slideToggle(function(){
-            dask.css('height',$('body').height());
-        });
-        dask.toggle();
-        daskFn(false);
-    });
-    
-    function daskFn(type){
-        let body = $("body");
-        if(type){
-            body.css('overflow','');
-        }else{
-            body.css('overflow','hidden');
-        }
+                    $(".product").html(template('lists',data))
+                }
+            }
+        })
     }
 
-    dask.click(function(){
-        nav.slideUp();
-        $(this).hide();
-        daskFn(true);
-    })
+    // detail
+    $(".product").on('click','li',function(){
+        var $this = $(this);
+        var id = $this.data('id');
+        console.log(id)
 
-    nav.on('click', 'li',function(){
-        let $this = $(this);
-        $this.siblings().removeClass('active');
-        $this.addClass('active');
-        bodyWidth >= 640 ? '' : nav.slideUp();
-        console.log(bodyWidth >= 640)
-        dask.hide();
-        daskFn(true);
+        location.href = './detail.html?id=' + id;
     })
-
-    $("textarea").change(function(){
-        var val = $(this).val()
-        console.log(JSON.stringify(val).replace(/&nbsp;/g, ' ').replace(/\<br\/\>/g, '\n\n'))
-
-    })
-})();
+    
+})();   

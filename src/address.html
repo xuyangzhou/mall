@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首页</title>
+    <title>收货地址</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./less/layout.css">
-    <link rel="stylesheet" href="./less/index.css">
+    <link rel="stylesheet" href="./less/address.css">
     <script src="./js/baseUrl.js"></script>
     <script src="./lib/jquery.min.js"></script>
     <script src="./lib/template-web.js"></script>
@@ -34,20 +34,8 @@
     <div class="dask"></div>
     <!-- 内容区 -->
     <div class="contant">
-        <!-- banner -->
-        <div class="banner">
-            <img src="http://192.168.5.232:8081/hwgasvip/rest/wxPay/getWxPayCode" alt="">
-        </div>
         <div class="container">
-            <ul class="product clearfix">
-                <li class="f_left"><div></div></li>
-                <li class="f_left"><div></div></li>
-                <li class="f_left"><div></div></li>
-                <li class="f_left"><div></div></li>
-                <li class="f_left"><div></div></li>
-                <li class="f_left"><div></div></li>
-                <li class="f_left"><div></div></li>
-            </ul>
+            
         </div><!-- container end -->
     </div>
     
@@ -58,20 +46,8 @@
     </div>
 </body>
 <script id="lists" type="text/html">
-    {{each list}}
-    <li class="f_left" data-id='{{$value.commodity_basic_id}}'>
-        <div class='product-inner'>
-            <div class='product-img'><img src="{{$value.pic_path}}" alt=""></div>
-            <h2 class='product-name'>{{$value.commodity_name}}</h2>
-            <div class='clearfix'>
-                <p class='price f_left'>￥{{$value.sale_price}}</p>
-                <p class='original f_left'>￥{{$value.commodity_basic_price}}</p>
-            </div>
-            
-        </div>
-    </li>
-    {{/each}}
+    
 </script>
 <script src="./js/layout.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/address.js"></script>
 </html>

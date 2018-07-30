@@ -15,201 +15,52 @@
 @index1: 99; // 一级
 @index2: 9; // 二级
 
-html,body{
-    width: 100%;
-}
-
-.container {
-    margin: 0 auto;
-}
-
-.header{
-    width: 100%;
-    height: @h-l;
-    background: #fff;
-    padding: 0 12px;
-    border-bottom: 1px solid @bdCol;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: @index1;
-    .logo{
-        width: 50px;
-        height: 50px;
-        img{
+.product{
+    li{
+        width: 25%;
+        // height: 200px;
+        padding-right: 12px;
+        margin-bottom: 12px;
+        .product-inner{
             width: 100%;
+            height: 100%;
+            background: #f4f4f4;
+            padding-bottom: 10px;
         }
-    }
-    .nav{
-        height: 100%;
-        li{
-            width: 120px;
-            height: @h-l;
-            line-height: @h-l;
-            text-align: center;
-            font-size: 18px;
-            
-            transition: all 0.4s ease-in-out;
-            border-bottom:2px solid transparent;
-            >a{
-                color: #687074;
-                text-transform: uppercase;
+        .product-img{
+            width: 100%;
+            img{
+                width: 100%;
             }
+        }
+        .product-name{
+            font-size: 16px;
+            height: 28px;
+            overflow: hidden;
+            line-height: 28px;
+            font-weight: normal;
+            margin-bottom: 3px;
             &:hover{
-                
-                border-bottom:2px solid @assistCol;
-                a{
-                    color: @assistCol;
-                }
-            }
-            &.active{
-                a{
-                    color: @assistCol;
-                }
-                border-bottom:2px solid @assistCol;
+                color:@accentCol;
             }
         }
-    }
-}
-
-.dask{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: @index2;
-    background: rgba(0,0,0,0.25);
-    display: none;
-}
-
-.contant{
-    padding-top: @h-l;
-    .banner{
-        width: 100%;
-        height: 420px;
-        background: linear-gradient(@accentCol,@assistCol);
-    }
-    // container 默认大屏
-    .container{
-        padding-bottom: @f-l;
-        padding-left: 12px;
-        margin-top: 12px;
-        .product{
-            li{
-                width: 25%;
-                height: 200px;
-                padding-right: 12px;
-                margin-bottom: 12px;
-                div{
-                    width: 100%;
-                    height: 100%;
-                    background: #f4f4f4;
-                }
-            }
+        .price{
+            margin-right: 10px;
+            color: @accentCol;
+        }
+        .original{
+            color: #999;
+            font-size: 14px;
+            overflow: hidden;
+            text-decoration: line-through;
         }
     }
-}
-
-
-.footer{
-    width: 100%;
-    height: @f-l;
-    font-size: 12px;
-    color: rgb(167, 167, 167);
-    text-align: center;
-    line-height: @f-l;
-    background: #fff;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    border-top:1px solid @bdCol;
-    z-index: @index1;
 }
 
 @media (max-width: 640px){
-    .header{
-        height: @h-s;
-        .btn-navbar {
-            padding:10px 15px;
-            margin-top:1px;
-            margin-right:0;
-            background:#b81c2b;
-            margin-top: 12px;
-            border:none !important;	
-            &:hover {
-                background:#676767;
-            }
-            span,&:hover span { 
-                background:#fff !important;
-                box-shadow:none !important;
-            }
-            .icon-bar {
-                display: block;
-                width: 18px;
-                height: 2px;
-                margin-top: 3px;
-                background-color: #f5f5f5;
-                -webkit-border-radius: 1px;
-                -moz-border-radius: 1px;
-                border-radius: 1px;
-                -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.25);
-                -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.25);
-                box-shadow: 0 1px 0 rgba(0,0,0,0.25);
-            }
+    .product{
+        li{
+            width: 50%;
         }
-        .nav{            
-            background: #fff;
-            width: 100%;
-            height: auto;
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 100%;
-            -webkit-box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-            -moz-box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-            display: none;
-            li{
-                width: 100%;
-                height: @h-s;
-                line-height: @h-s;
-                border-bottom:1px solid #eee;
-            }
-        }
-    }
-    .footer{
-        height: @f-s;
-        line-height: @f-s;
-    }
-    .contant{
-        padding-top: @h-s;
-        // container 默认大屏
-        .container{
-            width: 375px;
-            padding-bottom: @f-s;
-            .product{
-                li{
-                    width: 50%;
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
-}
-
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
-}
-@media (min-width: 1200px) {
-    .container {
-        width: 1200px;
     }
 }

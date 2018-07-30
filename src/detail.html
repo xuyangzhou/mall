@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./less/layout.css">
+    <link rel="stylesheet" href="./less/detail.css">
+    <script src="./js/baseUrl.js"></script>
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/template-web.js"></script>
+</head>
+<body>
+    <div class="header clearfix">
+        <!-- logo -->
+        <div class="logo f_left">
+            <img src="./img/" alt="">
+        </div>
+        <!-- 导航 -->
+        <a class="btn btn-navbar f_right" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <ul class="nav clearfix f_right">
+            <li class="f_left active"><a href="index.html">首页</a></li>
+            <li class="f_left"><a href="#">我的</a></li>
+            <li class="f_left"><a href="login.html">退出</a></li>
+        </ul>
+    </div>
+    <!-- 遮罩 -->
+    <div class="dask"></div>
+    <!-- 内容区 -->
+    <div class="contant">
+        <div class="container">
+            <!-- commodity -->
+            <div class="commodity clearfix">
+                <div class="commodity-left f_left">
+                    <div class="detail-img">
+                        <img src="http://192.168.5.232:8081/hwgasvip/uploads/20180719/8101b3b2-a0d8-3c96-9332-5e79d3747c1a.png" alt="">
+                    </div>
+                    <ul class="detail-tab">
+                        <li><img src="http://192.168.5.232:8081/hwgasvip/uploads/20180719/8101b3b2-a0d8-3c96-9332-5e79d3747c1a.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="commodity-right f_left">
+                    <h2 class="commodity-name">沙滩裤男士夏泳裤男游泳裤速干宽松大码短裤海边冲浪度假</h2>
+                    <ul class="commodity-label">
+                        <li class="commodity-orgin-prive">
+                            <label for="">原价</label>
+                            <span>￥<strong>668.00</strong> </span>
+                        </li>
+                        <li class="commodity-prive">
+                            <label for="">价格</label>
+                            <span class="active">￥<strong>467.00</strong></span>
+                        </li>
+                    </ul>
+                    <div class="commodity-type">
+                        <label for="">分类</label>
+                        <ul class="commodity-type-img clearfix">
+                            <li class="f_left active"><img src="http://192.168.5.232:8081/hwgasvip/uploads/20180719/8101b3b2-a0d8-3c96-9332-5e79d3747c1a.png" alt=""></li>
+                            <li class="f_left"><img src="http://192.168.5.232:8081/hwgasvip/uploads/20180719/8101b3b2-a0d8-3c96-9332-5e79d3747c1a.png" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="commodity-num">
+                        <label for="">数量</label>
+                        <div class="commodity-input-box">
+                            <input type="number" placeholder="1">
+                        </div>
+                    </div>
+                    <div class="commodity-buy">
+                        <button class="commodity-buy-btn"><i class="iconfont icon-cartfill"></i> 立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- container end -->
+    </div>
+    
+
+    <!-- footer -->
+    <div class="footer">
+        Copyright &copy; 2018. All rights reserved.
+    </div>
+</body>
+<script id="lists" type="text/html">
+   
+</script>
+<script src="./js/layout.js"></script>
+<script src="./js/detail.js"></script>
+</html>
